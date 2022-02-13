@@ -31,28 +31,26 @@ const QuestionListItem: React.FC<QuestionListItemProps> = ({
 
   return (
     <div className="QuestionList-item">
-      { isEditing &&
-        <QuestionForm
-          id={id}
-          text={text}
-          isMultiple={isMultiple}
-          answerOptions={answerOptions}
-          onClose={toggleEditing}
-        />
-      }
-      { !isEditing &&
-        <>
-          <b>{text}</b>
-          { isMultiple
-            ? <MultipleAnswer
-                options={answerOptions!} // assert answerOptions when isMultiple
-                selectedOptionId={patientAnswer?.answerOptionId}
-              />
-            : <Answer text={patientAnswer?.text} />
-          }
-          <input type="button" value="Edit" onClick={toggleEditing} />
-          <input type="button" value="Delete" onClick={onDelete} />
-        </>
+      { isEditing
+        ? <QuestionForm
+            id={id}
+            text={text}
+            isMultiple={isMultiple}
+            answerOptions={answerOptions}
+            onClose={toggleEditing}
+          />
+        : <>
+            <b>{text}</b>
+            { isMultiple
+              ? <MultipleAnswer
+                  options={answerOptions!} // assert answerOptions when isMultiple
+                  selectedOptionId={patientAnswer?.answerOptionId}
+                />
+              : <Answer text={patientAnswer?.text} />
+            }
+            <input type="button" value="Edit" onClick={toggleEditing} />
+            <input type="button" value="Delete" onClick={onDelete} />
+          </>
       }
     </div>
   );
