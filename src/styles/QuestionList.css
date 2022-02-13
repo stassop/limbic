@@ -1,0 +1,25 @@
+.QuestionList {
+  flex: .75 1;
+  padding: 0 20px;
+}
+
+.QuestionList ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.QuestionList input {
+  font-size: 1rem;
+}
+
+.QuestionList button {
+  font-size: 1rem;
+}
+
+.QuestionList-item {
+  border-radius: 20px;
+  background-color: lightgray;
+  padding: 20px;
+  margin: 10px 0;
+}

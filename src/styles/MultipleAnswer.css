@@ -1,0 +1,25 @@
+.MultipleAnswer {
+  margin: 1em 0;
+}
+
+.MultipleAnswer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.MultipleAnswer li {
+  padding-bottom: .5em;
+}
+
+.MultipleAnswer li:last-of-type {
+  padding-bottom: 0;
+}
+
+.MultipleAnswer-option {
+  color: gray;
+}
+
+.MultipleAnswer-option-selected {
+  color: black;
+}
