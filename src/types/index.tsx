@@ -10,7 +10,10 @@ export interface Question {
   answerOptions?: AnswerOption[],
 }
 
-export type Gender = 'male' | 'female';
+export enum Gender {
+  male = 'male',
+  female = 'female',
+}
 
 export interface PatientAnswer {
   questionId: number,
@@ -21,7 +24,7 @@ export interface PatientAnswer {
 export interface Patient {
   id: number,
   name: string,
-  gender: string,
+  gender: Gender,
   isActive: boolean,
   lastActive: string,
   answers: PatientAnswer[],
