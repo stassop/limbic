@@ -30,6 +30,8 @@ const QuestionForm: React.FC<QuestionFormProps> = ({
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    // proper typing (as seen in the link) still fails tests:
+    // https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/forms_and_events/
     const form: HTMLFormElement = event.target as HTMLFormElement;
     const questionId: number = id !== undefined ? id : patients.length; // id is same as index
     const question = {

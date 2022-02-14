@@ -30,7 +30,10 @@ const QuestionListItem: React.FC<QuestionListItemProps> = ({
   };
 
   return (
-    <div className="QuestionList-item">
+    <div
+      className="QuestionList-item"
+      data-testid={`question-${id}`}
+    >
       { isEditing
         ? <QuestionForm
             id={id}

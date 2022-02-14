@@ -8,6 +8,7 @@ interface PatientListItemProps extends Patient {
 }
 
 const PatientListItem: React.FC<PatientListItemProps> = ({
+  id,
   name,
   isActive,
   lastActive,
@@ -17,6 +18,7 @@ const PatientListItem: React.FC<PatientListItemProps> = ({
   return (
     <div
       className={`PatientList-item ${isSelected ? 'PatientList-item-selected' : ''}`}
+      data-testid={`patient-${id}`}
       onClick={onSelect}
     >
       <b>{name}</b><br />
